@@ -1,0 +1,1 @@
+ReactDOMRe.renderToElementWithId(<TodoApp name = "test" />, "root");
