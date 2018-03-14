@@ -29,16 +29,13 @@ ReactDOMRe.renderToElementWithId(
 );
 ```
 
-## Slide 26 Add types
+## Slide 27 Add some state
 ```
 type item = {
   title: string,
   completed: bool
 };
-```
 
-## Slide 27 Add some state
-```
 /* State declaration */
 type state = {
     items: list(item)
@@ -51,6 +48,15 @@ type action =
 /* Component template declaration.
 Needs to be **after** state and action declarations! */
 let component = ReasonReact.reducerComponent("TodoApp");
+```
+
+include additional required functions
+```
+initialState: () => {items: []},
+reducer: (action, state) =>
+  switch (action) {
+  | AddItem => ReasonReact.Update({...state, items: [{title: "item", completed: false}, ...state.items]})
+  },
 ```
 
 wire up the the action to the onClick

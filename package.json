@@ -2,8 +2,7 @@
   "name": "todo-app",
   "version": "0.1.0",
   "scripts": {
-    "build": "webpack -w",
-    "bsb": "bsb -make-world -w",
+    "build": "bsb -make-world -w",
     "start": "webpack-dev-server --open",
     "clean": "bsb -clean-world"
   },
